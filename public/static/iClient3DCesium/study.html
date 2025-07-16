@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link href="../Build/Cesium/Widgets/widgets.css" rel="stylesheet"> -->
+    <link href="../iClient3DCesium/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <!-- <scrip src="../Build/Cesium/Cesium.js"></scrip> -->
+    <!-- <script type="text/javascript" src="../Build/Cesium/Cesium.js"></script> -->
+    <script type="text/javascript" src="../iClient3DCesium/Build/Cesium/Cesium.js"></script>
+    <!-- <link href="./webgl/css/pretty.css" rel="stylesheet"> -->
+    <link href="./webgl/css/pretty.css" rel="stylesheet">
+    <!-- <script src="./webgl/js/jquery.min.js"></script> -->
+    <script src="./webgl/js/jquery.min.js"></script>
+    <script src="./webgl/js/config.js"></script>
+    <script>
+        window.startupCalled = true;
+        function initCesium() {
+            console.log(Cesium)
+            var viewer = new Cesium.Viewer('cesiumContainer');
+            viewer.imageryLayers.addImageryProvider(new Cesium.BingMapsImageryProvider({
+                url: 'https://dev.virtualearth.net',
+                mapStyle: Cesium.BingMapsStyle.AERIAL,
+                key: "YuD4vZxF2mehE2Bwiblv~YMcU_CA - Oqyyi3KKGlm9 - A~Aln0H3xK8n2U0yAlok3dWAsvuKTFY_OO8avmzz5N02WoKea01q7WA29W4j6biWZp"
+            }));
+        }
+
+    </script>
+</head>
+
+<body onload="initCesium()">
+    <div id="cesiumContainer"></div>
+</body>
+
+</html>
